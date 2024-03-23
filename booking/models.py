@@ -17,8 +17,8 @@ class Room(models.Model):
 
 class Reservation(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    check_in = models.DateField()
-    check_out = models.DateField()
-    occupancy = models.PositiveSmallIntegerField()
+    check_in = models.DateField('Дата въезда')
+    check_out = models.DateField('Дата выезда')
+    occupancy = models.PositiveSmallIntegerField('Вместимость')
     total_price = MoneyField('Стоимость', max_digits=10, decimal_places=2, default_currency='RUB')
     services = models.ManyToManyField(Service)
