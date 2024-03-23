@@ -21,4 +21,4 @@ class Reservation(models.Model):
     check_out = models.DateField('Дата выезда')
     occupancy = models.PositiveSmallIntegerField('Вместимость')
     total_price = MoneyField('Стоимость', max_digits=10, decimal_places=2, default_currency='RUB')
-    services = models.ManyToManyField(Service)
+    services = models.ManyToManyField('Service')
